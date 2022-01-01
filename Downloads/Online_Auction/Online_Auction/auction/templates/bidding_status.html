@@ -31,13 +31,13 @@
       {% else %}
 <td style="color:green">Start on time</td>
       {% endif %}
-      {% if i.payment.pay "pending" %}
+      {% if i.payment.pay == "pending" %}
       <td><a href="{% url 'Payment_mode' i.id %}" ><button class="btn btn-primary">Pay online</button></a></td>
  {% else %}
-      {% if i.payment.pay "paid" %}
+      {% if i.payment.pay == "paid" %}
        <td>Paid</td>
        {% else %}
-      {% if i.payment.pay "reject" %}
+      {% if i.payment.pay == "reject" %}
       <td style="font-size:20px;color:red"><i class="fa fa-times"></i> </td>
       {% else %}
       <td>Not Available</td>

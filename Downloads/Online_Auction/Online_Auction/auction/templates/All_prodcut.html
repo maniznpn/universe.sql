@@ -26,13 +26,13 @@
                                 <span style="font-weight:bold;color:blue">&#8377; : {{j.product.min_price}}</span>
                             </div>
                             </div></div>
-                        {% ifnotequal j.product.status.status 'Done' %}
+                        {% if j.product.status.status == 'Done' %}
 							<a href="{% url 'particpated_user' j.id %}"><button type="submit" class="btn btn-primary" style="width:100%">
                                     <i class="fa fa-users"></i> Participated</button></a>
                         {% else %}
                             <a href="{% url 'winner1' j.product.id %}"><button type="submit" class="btn btn-dark" style="width:100%">
                                     <i class="fa fa-user"></i> Winner</button></a>
-                        {% endifnotequal %}
+                        {% endif %}
    				</div></div>
             {% endif %}
 			{% endfor %}

@@ -26,16 +26,16 @@
                             </div><div class="col-md-5" align="right"><span style="font-weight:bold;color:grey">
                                 <a href="{% url 'product_detail' j.id %}"> <i class="fa fa-info"></i> Detail</a></span></div>
                             </div></div>
-                        {% if j.temp 0 %}
+                        {% if j.temp == 0 %}
                                 <form action="{% url 'view_auction' j.id %}" method="post">
 								{% csrf_token %}
 								<button type="submit" class="btn btn-primary" style="width:100%" onclick="return confirm('Are you sure?')">Participate</button>
 							</form>
                         {% else %}
-                        {% if j.temp 2 %}
+                        {% if j.temp == 2 %}
                         <a href="{% url 'start_auction' j.id %}" ><button type="submit" class="btn btn-danger" style="width:100%">Currently in Bid =</button></a>
                         {% else %}
-                         {% if j.temp 3 %}
+                         {% if j.temp == 3 %}
                              <a href="{% url 'winner1' j.id %}" ><button type="submit" class="btn btn-danger" style="width:100%">
                                  <i class="fa fa-user"></i> winner announced</button></a>
                         {% else %}

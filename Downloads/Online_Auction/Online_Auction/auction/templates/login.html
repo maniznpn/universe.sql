@@ -2,19 +2,19 @@
 {% block body %}
 {% load static %}
 
-{% if error "pat" %}
+{% if error == "pat" %}
 <script>
     alert('logged in successfully');
     window.location=('{% url 'profile1' %}');
 </script>
 {% endif %}
-{% if error "pat1" %}
+{% if error == "pat1" %}
 <script>
     alert('logged in successfully');
     window.location=('{% url 'profile1' %}');
 </script>
 {% endif %}
-{% if error "not" %}
+{% if error == "not" %}
 <script>
     alert('Username & Password are not Matching');
 </script>
